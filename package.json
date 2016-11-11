@@ -1,0 +1,16 @@
+{
+  "name": "tinymocha",
+  "version": "0.0.0",
+  "description": "A minimalistic test framework that supports a subset of Mocha",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "jsmockito": "^1.0.5",
+    "mocha": "^3.1.2"
+  }
+}
