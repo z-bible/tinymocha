@@ -158,3 +158,36 @@ describe('beforeEach', () => {
   })
 })
 
+
+describe('exitCode', () => {
+  beforeEach(() => {
+    process.exitCode = 0
+  })
+  it('is 0 for passing tests', () =>
+    TM.describe("hello", () => {
+      TM.it("works", () => {
+      })
+    })
+    .then(()=>{
+      expect(process.exitCode).toBe(0)
+    })
+  )
+  it('is 1 for failing tests', () =>
+    TM.describe("hello", () => {
+      TM.it("does not work", () => {
+        window.hello()
+      })
+    })
+    .then(() => {
+      expect(process.exitCode).toBe(1)
+    })
+  )
+  it('is 2 for invalid test suites', () => 
+    TM.describe("hello", () => {
+      window.hello()
+    })
+    .then(() => {
+      expect(process.exitCode).toBe(2)
+    })
+  )
+})

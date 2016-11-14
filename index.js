@@ -39,6 +39,7 @@ exports.describe = function describe (name, fn) {
         }, function (err) {
           console.error(name + ' ' + subName + ' failed')
           console.error(err)
+          if (typeof process !== "undefined") process.exitCode = 1
         })
       }
       allCasesDone = allCasesDone.then(doIt)
@@ -48,6 +49,7 @@ exports.describe = function describe (name, fn) {
       return allCasesDone
     } catch (err) {
       console.error(err)
+      if (typeof process !== "undefined") process.exitCode = 2
     }
   }))
 }

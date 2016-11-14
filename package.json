@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "A minimalistic test framework that supports a subset of Mocha",
   "main": "index.js",
+  "repository": "https://github.com/z-bible/tinymocha",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
