@@ -9,7 +9,7 @@ var allSuitesDone = Promise.resolve()
 
 exports.describe = function describe (name, fn) {
   return (allSuitesDone = allSuitesDone.then(function () {
-    console.log('\n----------- Testing ' + name)
+    console.log('\n-------- Testing ' + name)
     if (!fn) return
     var hooks = { beforeEach: [] }
     exports.beforeEach = function beforeEach (fn) {

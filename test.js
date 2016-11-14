@@ -14,12 +14,12 @@ describe('describe', () => {
     console.error = spy(consoleError)
   })
 
-  it("outputs ----- Testing <name>'", () =>
+  it("outputs <8 dashes> Testing <name>'", () =>
     TM.describe('hello', () => {
 
     })
     .then(() => {
-      verify(console.log)('\n----------- Testing hello')
+      verify(console.log)('\n-------- Testing hello')
     })
   )
 })
