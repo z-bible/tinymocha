@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/z-bible/tinymocha",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "author": "",
   "license": "MIT",
