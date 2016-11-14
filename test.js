@@ -129,27 +129,27 @@ describe('beforeEach', () => {
 
   it('can pass values to test cases', () => {
     TM.describe('hello', () => {
-      TM.beforeEach(() => {
+      TM.beforeEach(function() {
         this.c = 5
       })
-      TM.it('works', () => {
+      TM.it('works', function() {
         console.log(this.c)
       })
     })
-    .then(() => {
+    .then(function() {
       verify(console.log)(5)
     })
   })
 
   it('can pass values to next beforeEach handlers', () => {
     TM.describe('hello', () => {
-      TM.beforeEach(() => {
+      TM.beforeEach(function() {
         this.c = 5
       })
-      TM.beforeEach(() => {
+      TM.beforeEach(function() {
         console.log(this.c)
       })
-      TM.it('works', () => {
+      TM.it('works', function() {
       })
     })
     .then(() => {
