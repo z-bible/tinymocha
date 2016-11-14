@@ -1,9 +1,9 @@
 'use strict'
 
-var it, spec, beforeEach
+var it, beforeEach
 exports.beforeEach = function () { beforeEach.apply(this, arguments) }
 exports.it = function () { it.apply(this, arguments) }
-exports.spec = function () { spec.apply(this, arguments) }
+exports.spec = function () { it.apply(this, arguments) }
 
 var allSuitesDone = Promise.resolve()
 
@@ -12,7 +12,7 @@ exports.describe = function describe (name, fn) {
     console.log('\n-------- Testing ' + name)
     if (!fn) return
     var hooks = { beforeEach: [] }
-    exports.beforeEach = function beforeEach (fn) {
+    beforeEach = function beforeEach (fn) {
       if (!fn) {
         console.error('No fn in beforeEach')
         return
@@ -20,7 +20,7 @@ exports.describe = function describe (name, fn) {
       hooks.beforeEach.push(fn)
     }
     var allCasesDone = Promise.resolve()
-    exports.spec = exports.it = function it (subName, fn) {
+    it = function it (subName, fn) {
       var doIt = function doIt () {
         if (!fn) {
           console.warn(name + ' ' + subName + ' pending')

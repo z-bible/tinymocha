@@ -191,3 +191,22 @@ describe('exitCode', () => {
     })
   )
 })
+
+describe('DSL', () => {
+  beforeEach(() => {
+    console.log = spy(consoleLog)
+    console.error = spy(consoleError)
+  })
+  
+  it('function references can be saved', () => {
+    const i = TM.it
+    const d = TM.describe
+    return d("hello", () => {
+      i("works", () => {
+      })
+    })
+    .then(() => {
+      verify(console.log)("hello works ok")
+    })
+  })
+})
