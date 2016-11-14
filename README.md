@@ -9,7 +9,14 @@ a subset of the Mocha DSL.
 
 and in your code:
 
-    import {describe, it, beforeEach} from tinymocha
+    import {describe, it, beforeEach} from "tinymocha"
+    
+or
+
+    var Tinymocha = require("tinymocha");
+    var describe = Tinymocha.describe
+    var it = Tinymocha.it
+    var beforeEach = Tinymocha.beforeEach
 
 The rest is just Mocha syntax.
 
