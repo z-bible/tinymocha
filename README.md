@@ -13,10 +13,10 @@ and in your code:
     
 or
 
-    var Tinymocha = require("tinymocha");
-    var describe = Tinymocha.describe
-    var it = Tinymocha.it
-    var beforeEach = Tinymocha.beforeEach
+    var tinymocha = require("tinymocha");
+    var describe = tinymocha.describe
+    var it = tinymocha.it
+    var beforeEach = tinymocha.beforeEach
 
 The rest is just Mocha syntax.
 
